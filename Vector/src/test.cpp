@@ -189,7 +189,9 @@ bool searchMatrix(std::vector<std::vector<int>>& matrix, int target) {
 }
 
 
-/*给定一个整数数组,已知有且只有两个数的和等于给定值,求这两个数的位置*/
+/**
+ *@brief:8.给定一个整数数组,已知有且只有两个数的和等于给定值,求这两个数的位置
+ */
 std::vector<int> twoSum(std::vector<int>& nums, int target) {
   std::vector<int> ans;
     for (size_t i=0;i<nums.size()-1;i++) {
