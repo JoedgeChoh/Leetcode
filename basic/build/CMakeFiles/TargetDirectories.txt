@@ -1,3 +1,4 @@
 /home/zhuhe/zhuhe/Leetcode/basic/build/CMakeFiles/rebuild_cache.dir
-/home/zhuhe/zhuhe/Leetcode/basic/build/CMakeFiles/main.dir
 /home/zhuhe/zhuhe/Leetcode/basic/build/CMakeFiles/edit_cache.dir
+/home/zhuhe/zhuhe/Leetcode/basic/build/CMakeFiles/main.dir
+/home/zhuhe/zhuhe/Leetcode/basic/build/CMakeFiles/set.dir

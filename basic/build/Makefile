@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -123,6 +123,19 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named set
+
+# Build rule for target.
+set: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 set
+.PHONY : set
+
+# fast build rule for target.
+set/fast:
+	$(MAKE) -f CMakeFiles/set.dir/build.make CMakeFiles/set.dir/build
+.PHONY : set/fast
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,6 +163,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/set.o: src/set.cpp.o
+
+.PHONY : src/set.o
+
+# target to build an object file
+src/set.cpp.o:
+	$(MAKE) -f CMakeFiles/set.dir/build.make CMakeFiles/set.dir/src/set.cpp.o
+.PHONY : src/set.cpp.o
+
+src/set.i: src/set.cpp.i
+
+.PHONY : src/set.i
+
+# target to preprocess a source file
+src/set.cpp.i:
+	$(MAKE) -f CMakeFiles/set.dir/build.make CMakeFiles/set.dir/src/set.cpp.i
+.PHONY : src/set.cpp.i
+
+src/set.s: src/set.cpp.s
+
+.PHONY : src/set.s
+
+# target to generate assembly for a file
+src/set.cpp.s:
+	$(MAKE) -f CMakeFiles/set.dir/build.make CMakeFiles/set.dir/src/set.cpp.s
+.PHONY : src/set.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -157,11 +197,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... main"
+	@echo "... set"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/set.o"
+	@echo "... src/set.i"
+	@echo "... src/set.s"
 .PHONY : help
 
 

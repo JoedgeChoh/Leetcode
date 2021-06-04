@@ -3,4 +3,5 @@ project(eigen_test)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 include_directories(/usr/include/eigen3)
 add_executable(main src/main.cpp)
+add_executable(test src/test.cpp)
 
